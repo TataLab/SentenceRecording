@@ -1,0 +1,73 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+
+/*
+	Construct by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+*/
+
+/* Highlights */
+
+	.highlights {
+		> section {
+			position: relative;
+			border-top: solid _size(border-width) _palette(border);
+
+			&:first-child {
+				border-top: 0;
+			}
+
+			.image {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 50%;
+				height: 100%;
+			}
+
+			.content {
+				margin-left: 50%;
+			}
+		}
+	}
+
+/* Features */
+
+	.features {
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		> section {
+			float: left;
+		}
+	}
+
+/* Spotlights */
+
+	.spotlights {
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		> section {
+			float: left;
+		}
+	}
+
+/* Banner */
+
+	#banner {
+		min-height: 0;
+
+		body.is-ie & {
+			height: auto;
+		}
+	}
