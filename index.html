@@ -40,7 +40,8 @@
 						v-on:set-state="setState"
 						v-on:advance-item="advanceItem">
 			    </record-item>
-					<h1> {{ currentPos+1 }} Of {{ sentenceList.length }}</h1>
+					<h1 v-if="currentPos < sentenceList.length"> {{ currentPos+1 }} Of {{ sentenceList.length }}</h1>
+					<h1 v-if="currentPos >= sentenceList.length"> Thanks for Participating!</h1>
 				</section>
 				</div>
 

@@ -4,8 +4,8 @@ Vue.component('record-item', {
 								"<header class='major'>"+
 								"<h2>“{{ item.text }}”</h2>"+
 								"<ul class='actions'>"+
-								"<li v-if='item.state == \"start\"'><a v-on:click='startRecording' class='button'>Start Recording</a></li>"+
-                "<li v-if='item.state == \"recording\"'><a v-on:click='stopRecording' class='button'>Stop Recording</a></li>"+
+								"<li v-if='item.state == \"start\"'><a v-on:click='startRecording' class='button special start-recording'>Start Recording</a></li>"+
+                "<li v-if='item.state == \"recording\"'><a v-on:click='stopRecording' class='button special stop-recording'>Stop Recording</a></li>"+
                 "<li v-if='item.state == \"uploaded\"'><a v-on:click='nextItem' class='button'>Next</a></li>"+
 								"</ul>"+
                 "<h1 v-if='item.state == \"uploading\"'>Uploading...</h1>"+
@@ -44,14 +44,15 @@ var app = new Vue({
       { id: 2, text: 'Ciao', state: 'start' },
       { id: 3, text: 'Hello iCub', state: 'start' },
       { id: 4, text: 'Hello', state: 'start' },
-    ]
+    ],
+    complete: function() { return !(this.currentPos <= this.sentenceList.length) },
   },
   methods: {
     setState: function(state) {
       this.sentenceList[this.currentPos].state = state
     },
     advanceItem: function() {
-      if(this.currentPos < this.sentenceList.length-1)
+      if(this.currentPos <= this.sentenceList.length-1)
         this.currentPos += 1;
     }
   }

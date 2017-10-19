@@ -3752,3 +3752,11 @@
 			}
 
 		}
+
+.button.special.start-recording {
+	background-color: #6DBCDB;
+}
+
+.button.special.stop-recording {
+	background-color: #FC4349;
+}
