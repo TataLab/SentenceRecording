@@ -36,6 +36,7 @@
 			      v-for="item in sentenceList"
 						v-if="item.id == currentPos"
 			      v-bind:item="item"
+						v-bind:speaker="speaker"
 			      v-bind:key="item.id"
 						v-on:set-state="setState"
 						v-on:advance-item="advanceItem">
@@ -57,6 +58,7 @@
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/RecordRTC.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/vue.js"></script>
